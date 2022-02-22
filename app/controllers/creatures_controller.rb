@@ -6,6 +6,7 @@ class CreaturesController < ApplicationController
   end
 
   def show
+    @reservation = @creature.id
   end
 
   def new

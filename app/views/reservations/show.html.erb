@@ -1,0 +1,7 @@
+<%= @reservation.starting_date %>
+<%= @reservation.ending_date %>
+<%= link_to "Remove",
+            reservation_path(@reservation),
+            method: :delete,
+            data: { confirm: "Are you sure?" }
+%>
