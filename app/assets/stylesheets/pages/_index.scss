@@ -1,2 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.card-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 20px;
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#h1-index {
+  text-align: center;
+}

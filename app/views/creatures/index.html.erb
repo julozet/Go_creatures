@@ -1,10 +1,18 @@
-<ul>
+
+<h1 id="h1-index">All the amazing creatures we have!</h1>
+<br>
+<div class="card-container">
   <% @creatures.each do |creature| %>
     <div class="card-product">
-      <img src="" />
-        <div class="card-product-infos">
-          <li><%= link_to creature.name, creature_path(creature) %></li>
-        </div>
+      <img src="<%= creature.picture_url %>" />
+      <div class="card-product-infos">
+        <h2><%= creature.name %></h2>
+        <p><%= creature.address %></p>
+        <p><%= creature.kind %></p>
+        <p><strong><%= creature.price %>$</strong></p>
+      </div>
     </div>
   <% end %>
-</ul>
+</div>
+
+<% link_to "", creature_path(@creature)%>
