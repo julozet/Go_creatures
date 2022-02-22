@@ -3,16 +3,16 @@
 <br>
 <div class="card-container">
   <% @creatures.each do |creature| %>
-    <div class="card-product">
-      <img src="<%= creature.picture_url %>" />
-      <div class="card-product-infos">
-        <h2><%= creature.name %></h2>
-        <p><%= creature.address %></p>
-        <p><%= creature.kind %></p>
-        <p><strong><%= creature.price %>$</strong></p>
+    <%= link_to creature_path(creature) do %>
+      <div class="card-product">
+        <img src="<%= creature.picture_url %>" />
+        <div class="card-product-infos" id="card-text">
+          <h2><%=creature.name%></h2>
+          <p><%= creature.address %></p>
+          <p><%= creature.kind %></p>
+          <p><strong><%= creature.price %>$</strong></p>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
-
-<% link_to "", creature_path(@creature)%>
