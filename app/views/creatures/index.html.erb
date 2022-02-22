@@ -1,0 +1,10 @@
+<ul>
+  <% @creatures.each do |creature| %>
+    <div class="card-product">
+      <img src="" />
+        <div class="card-product-infos">
+          <li><%= link_to creature.name, creature_path(creature) %></li>
+        </div>
+    </div>
+  <% end %>
+</ul>

@@ -1,0 +1,8 @@
+<h1><%= @creature.name %></h1>
+
+<p><%= link_to 'All creatures', creatures_path %></p>
+<p><%= link_to "Edit creature", "/creatures/#{@creature.id}/edit" =%></p>
+<p><%= link_to "Delete #{@creature.name}",
+            creature_path(@creature),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></p>
