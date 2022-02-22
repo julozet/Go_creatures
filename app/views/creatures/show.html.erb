@@ -6,3 +6,7 @@
             creature_path(@creature),
             method: :delete,
             data: { confirm: "Are you sure?" } %></p>
+
+<% unless @creature.user == current_user %>
+  <%= link_to "Make Reservation", new_creature_reservation_path(@creature.id) %>
+<% end %>
