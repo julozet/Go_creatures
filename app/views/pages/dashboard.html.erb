@@ -1,24 +1,23 @@
 <h2>My Creatures Reservations</h2>
   <ul>
-    <% @creatures.each do |creature| %>
-      <% if creature.user_id == current_user.id %>
-      <li><%= creature.name  %></li>
-      <ul>
-        <% @reservations.each do |reservation| %>
-          <% request_pet = @creatures.find { |creature| creature.id == reservation.creature_id} %>
-          <% if request_pet.name == creature.name %>
-          <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} with #{reservation.creature.name} | By #{reservation.user.first_name}" %></li>
+    <% @creatures.each do |creature| %> <%# Check if you own any of the creatures (User added a creature) %>
+      <% if creature.user_id == current_user.id %> <%# If the creatures User id matches the current User, do the following: %>
+        <li><%= creature.name  %></li>  <%# Display your creatures names %>
+        <ul>
+          <% @reservations.each do |reservation| %> <%# If you own any of the creatures, check if they got a reservation request from another User %>
+            <% if reservation.creature == creature %> <%# If the creature in a reservation matches your creature, display the line below with the following info:  %>
+              <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} with #{reservation.creature.name} | By #{reservation.user.first_name}" %></li>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
+        </ul>
       <% end %>
     <% end %>
   </ul>
 
 <h2>Reservations Request</h2>
   <ul>
-    <% @reservations.each do |reservation| %>
-      <% if reservation.user_id == current_user.id %>
+    <% @reservations.each do |reservation| %> <%# Check to see if the current User has any reservations (User created a reservation) %>
+      <% if reservation.user_id == current_user.id %> <%# If the User id of the reservation matches the current User id, display the line below with the following info: %>
         <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} with #{reservation.creature.name} (Owner: #{reservation.creature.user.first_name}) | By You" %></li>
       <% end %>
     <% end %>
