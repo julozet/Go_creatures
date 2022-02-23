@@ -2,10 +2,12 @@ class ReservationsController < ApplicationController
   def show
     @reservation = Reservation.find(params[:id])
   end
+
   def new
     @creature = Creature.find(params[:creature_id])
     @reservation = Reservation.new
   end
+
   def create
     @creature = Creature.find(params[:creature_id])
     @reservation = Reservation.new(reservation_params)
@@ -18,10 +20,22 @@ class ReservationsController < ApplicationController
       render :new
     end
   end
+
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.delete
     redirect_to creature_path(@reservation.creature)
+  end
+
+  def accept
+    @reservation = Reservation.find(params[:id])
+    @reservation.status = "accepted"
+    @reservation.save
+  end
+
+  def decline
+    @reservation = Reservation.find(params[:id])
+    @reservation.delete
   end
 
   private

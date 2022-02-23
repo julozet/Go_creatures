@@ -43,7 +43,12 @@
         <ul>
           <% @reservations.each do |reservation| %>
             <% if reservation.user_id == current_user.id %>
-              <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} for #{reservation.creature.name} (Owner: #{reservation.creature.user.first_name}) | By You | Satus: #{reservation.status}" %></li>
+              <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} for #{reservation.creature.name} (Owner: #{reservation.creature.user.first_name}) | By You | Satus: #{reservation.status} |" %></li>
+                  <%= link_to "Remove",
+                      dashboard_path(@dashboard),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" }
+                  %>
             <% end %>
           <% end %>
         </ul>
@@ -56,8 +61,9 @@
           <% @creatures.each do |creature| %>
             <% if creature.user_id == current_user.id %>
                 <% @reservations.each do |reservation| %>
-                  <% if reservation.creature == creature %>
-                    <%= "#{reservation.creature.name} | from #{reservation.starting_date} to #{reservation.ending_date}| By #{reservation.user.first_name}" %></li>
+                  <% if reservation.creature == creature && reservation.status == "pending" %>
+                    <%= "#{reservation.creature.name} | from #{reservation.starting_date} to #{reservation.ending_date}| By #{reservation.user.first_name} | " %>
+                    <%= link_to "Accept" %> / <%=  link_to "Decline" %></li>
                   <% end %>
                 <% end %>
             <% end %>
@@ -67,15 +73,4 @@
 
     </div>
 
-<<<<<<< HEAD
-<h2>Reservations Request</h2>
-  <ul>
-    <% @reservations.each do |reservation| %>
-      <% if reservation.user_id == current_user.id %>
-        <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} with #{reservation.creature.name} (Owner: #{reservation.creature.user.first_name}) | By You | Accept / Reject" %></li>
-      <% end %>
-    <% end %>
-  </ul>
-=======
   </div>
->>>>>>> master
