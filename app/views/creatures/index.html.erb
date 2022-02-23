@@ -8,9 +8,10 @@
         <img src="<%= creature.picture_url %>" />
         <div class="card-product-infos" id="card-text">
           <h2><%=creature.name%></h2>
-          <p><%= creature.address %></p>
-          <p><%= creature.kind %></p>
-          <p><strong><%= creature.price %>$</strong></p>
+          <p><strong> Address | </strong> <%= creature.address %></p>
+          <p><strong> Kind | </strong> <%= creature.kind %></p>
+          <p><strong> Price per day | </strong> <%= creature.price %>$</strong></p>
+          <p><strong> Owner | </strong> <%= creature.user.first_name %></p>
         </div>
       </div>
     <% end %>
