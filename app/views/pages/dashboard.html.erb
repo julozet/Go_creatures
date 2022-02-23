@@ -2,15 +2,14 @@
   <ul>
     <% @creatures.each do |creature| %>
       <% if creature.user_id == current_user.id %>
-      <li><%= creature.name  %></li>
-      <ul>
-        <% @reservations.each do |reservation| %>
-          <% request_pet = @creatures.find { |creature| creature.id == reservation.creature_id} %>
-          <% if request_pet.name == creature.name %>
-          <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} with #{reservation.creature.name} | By #{reservation.user.first_name}" %></li>
+        <li><%= creature.name  %></li>
+        <ul>
+          <% @reservations.each do |reservation| %>
+            <% if reservation.creature == creature %>
+              <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} with #{reservation.creature.name} | By #{reservation.user.first_name}" %></li>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
+        </ul>
       <% end %>
     <% end %>
   </ul>
