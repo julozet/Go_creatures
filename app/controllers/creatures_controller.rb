@@ -46,6 +46,6 @@ class CreaturesController < ApplicationController
   private
 
   def creature_params
-    params.require(:creature).permit(:name, :address, :price, :description, :picture_url, :kind)
+    params.require(:creature).permit(:name, :address, :price, :description, :photo, :kind)
   end
 end

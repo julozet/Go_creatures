@@ -1,5 +1,5 @@
 <h1><%= @creature.name %></h1>
-
+<%= cl_image_tag @creature.photo.key, height: 300, width: 400, crop: :fill %>
 <p><%= link_to 'All creatures', creatures_path %></p>
 <p><%= link_to "Edit creature", edit_creature_path(@creature) %></p>
 <p><%= link_to "Delete #{@creature.name}",

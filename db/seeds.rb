@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 user_array = []
   user = User.new(
     email: "a@a.a",
@@ -27,50 +26,56 @@ user_array = []
 
 creature_array = []
 
+file = URI.open('https://cdn.hswstatic.com/gif/dd-5.jpg')
 creature = Creature.new(
     name: "Mighty",
     kind: "dragon",
     description: "Nice big fat dragon to vainquish anything/one",
-    picture_url: "https://downloadwap.com/thumbs2/wallpapers/p2ls/2019/misc/49/96b3baa913206346.jpg",
     address: "far mountain, 45",
     price: "5000€",
     user_id: 1
   )
+  creature.photo.attach(io: file, filename: 'dragon.jpg', content_type: 'image/jpg')
   creature.save!
   creature_array << creature
 
-creature = Creature.new(
+  file = URI.open('https://img.le-dictionnaire.com/vampire.jpg')
+  creature = Creature.new(
   name: "Vampy",
   kind: "vampire",
   description: "Don't forget to feed it with blood",
-  picture_url: "https://img.le-dictionnaire.com/vampire.jpg",
   address: "cave, 765",
   price: "500€",
   user_id: 1
 )
+creature.photo.attach(io: file, filename: 'vampire.jpg', content_type: 'image/jpg')
 creature.save!
 creature_array << creature
 
+file = URI.open('https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/9/97/Wolf.jpg/revision/latest/scale-to-width-down/250?cb=20190514081232')
 creature = Creature.new(
   name: "Wolfy",
   kind: "werewolf",
   description: "Only availaible on full moon nights",
-  picture_url: "https://i1.wp.com/topcomics.fr/wp-content/uploads/2020/10/1-2.jpg?resize=678%2C400&ssl=1",
   address: "Somewhere, 234 - place",
   price: "100€",
   user_id: 2
 )
+creature.photo.attach(io: file, filename: 'wolf.jpg', content_type: 'image/jpg')
 creature.save!
 creature_array << creature
 
+file = URI.open('https://www.computable.be/img/72/26/org_org/7226721.jpg')
 creature = Creature.new(
     name: "CutyX",
     kind: "unicorn",
     description: "You love rainbows ?",
-    picture_url: "https://www.computable.be/img/72/26/org_org/7226721.jpg",
     address:"in the sky, 445 - cloud",
     price:"4500€",
-    user_id: 2,
-)
-creature.save!
-creature_array << creature
+    user_id: 2
+  )
+  creature.photo.attach(io: file, filename: 'uni.jpg', content_type: 'image/jpg')
+  creature.save!
+  creature_array << creature
+
+  puts "done"
