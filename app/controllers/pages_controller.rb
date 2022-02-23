@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
   end
+
   def dashboard
     @creatures = Creature.all
     @reservations = Reservation.all
