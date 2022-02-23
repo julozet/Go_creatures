@@ -6,7 +6,7 @@
         <ul>
           <% @reservations.each do |reservation| %>
             <% if reservation.creature == creature %>
-              <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} with #{reservation.creature.name} | By #{reservation.user.first_name}" %></li>
+              <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} with #{reservation.creature.name} | By #{reservation.user.first_name} | Satus: #{reservation.status}" %></li>
             <% end %>
           <% end %>
         </ul>
@@ -18,7 +18,7 @@
   <ul>
     <% @reservations.each do |reservation| %>
       <% if reservation.user_id == current_user.id %>
-        <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} with #{reservation.creature.name} (Owner: #{reservation.creature.user.first_name}) | By You" %></li>
+        <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} with #{reservation.creature.name} (Owner: #{reservation.creature.user.first_name}) | By You | Accept / Reject" %></li>
       <% end %>
     <% end %>
   </ul>

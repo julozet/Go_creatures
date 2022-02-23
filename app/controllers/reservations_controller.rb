@@ -11,6 +11,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
     @reservation.creature_id = @creature.id
+    @reservation.status = "pending"
     if @reservation.save
       redirect_to creature_path(@creature)
     else
