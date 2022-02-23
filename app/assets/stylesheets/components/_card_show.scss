@@ -1,0 +1,91 @@
+.show-container {
+  display: grid;
+  grid-gap: 20px;
+  width: 100%;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+#description-box {
+  height: 280px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#description-box h2 {
+  font-size: 24px;
+  opacity: .7;
+  margin: 20px;
+  padding-top: 20px;
+}
+
+#description-box p {
+  margin: 20px;
+}
+
+#reservation-box {
+  display: grid;
+  height: 640px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#reservation-box h2 {
+  font-size: 24px;
+  opacity: .7;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card-show {
+  overflow: hidden;
+  height: 340px;
+  display: flex;
+}
+
+.card-show img {
+  height: 100%;
+  width: 340px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.card-show h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  text-decoration: none;
+}
+
+.card-show p {
+  font-size: 20px;
+  line-height: 3;
+  opacity: .7;
+  margin-top: 26px;
+}
+
+.card-show .card-show-infos {
+  padding: 24px;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+#edit p {
+  margin: 20px;
+}
+
+.test {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

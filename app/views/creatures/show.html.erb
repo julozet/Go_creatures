@@ -1,12 +1,37 @@
-<h1><%= @creature.name %></h1>
-
-<p><%= link_to 'All creatures', creatures_path %></p>
-<p><%= link_to "Edit creature", edit_creature_path(@creature) %></p>
-<p><%= link_to "Delete #{@creature.name}",
-            creature_path(@creature),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %></p>
-
-<% unless @creature.user == current_user %>
-  <%= link_to "Make Reservation", new_creature_reservation_path(@creature.id) %>
-<% end %>
+<div class="row">
+  <div class="col-md-8">
+    <div class="show-container">
+      <div class="card-show">
+        <img src="<%= @creature.picture_url %>" />
+        <div class="test">
+          <div class="card-show-infos" id="card-text">
+            <h2><%=@creature.name%></h2>
+            <p><%= @creature.address %></p>
+            <p><%= @creature.kind %></p>
+            <p><strong><%= @creature.price %>$</strong></p>
+          </div>
+          <div id="edit">
+            <% if @creature.user == current_user %>
+              <p><%= link_to "Edit creature", edit_creature_path(@creature) %></p>
+              <p><%= link_to "Delete #{@creature.name}",
+                creature_path(@creature),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %></p>
+            <% else %>
+              <p><%= link_to "Make Reservation", new_creature_reservation_path(@creature.id) %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="description-box">
+      <h2>Description</h2>
+      <p><%= @creature.description %></p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div id="reservation-box">
+      <h2>Reservation</h2>
+    </div>
+  </div>
+</div>
