@@ -1,7 +1,7 @@
   <div class="tab-container">
     <ul class="list-inline tabs-underlined">
       <li>
-        <a href="#" class="tab-underlined active">Add creature |</a>
+        <a href="<%=new_creature_path%>" class="tab-underlined active">Add creature |</a>
       </li>
       <li>
         <a href="#" class="tab-underlined"> Creatures reservations |</a>
@@ -19,46 +19,47 @@
     <div class="creature-container">
       <div class="creature-card">
         <% @creatures.each do |creature| %>
-          <%= link_to creature_path(creature) do %>
-            <div class="card-creature">
-              <img src="<%= creature.picture_url %>" />
-              <div class="card-creature-infos">
-                <h2><%=creature.name%></h2>
-                <p><%= creature.address %></p>
-                <p><%= creature.kind %></p>
-                <p><strong><%= creature.price %>$</strong></p>
+          <% if creature.user_id == current_user.id %>
+            <%= link_to creature_path(creature) do %>
+              <div class="card-creature">
+                <img src="<%= creature.picture_url %>" />
+                <div class="card-creature-infos">
+                  <h2><%=creature.name%></h2>
+                  <p><%= creature.address %></p>
+                  <p><%= creature.kind %></p>
+                  <p><strong><%= creature.price %>$</strong></p>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
         <% end %>
       </div>
     </div>
 
     <div class="reservation-container">
-      <div class="my-creature-reservation-container">
-        <h2>My Creatures Reservations</h2>
+      <div class="reservation-request">
+      <h4> My reservations</h4>
+      <br>
         <ul>
-          <% @creatures.each do |creature| %>
-            <% if creature.user_id == current_user.id %>
-              <li><%= creature.name  %></li>
-              <ul>
-                <% @reservations.each do |reservation| %>
-                  <% if reservation.creature == creature %>
-                    <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} with #{reservation.creature.name} | By #{reservation.user.first_name}" %></li>
-                  <% end %>
-                <% end %>
-              </ul>
+          <% @reservations.each do |reservation| %>
+            <% if reservation.user_id == current_user.id %>
+              <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} for #{reservation.creature.name} (Owner: #{reservation.creature.user.first_name}) | By You" %></li>
             <% end %>
           <% end %>
         </ul>
       </div>
+      <br>
 
-      <div class="reservation-request">
-      <h2>Reservations Request</h2>
+      <div class="my-creature-reservation-container">
+        <h4>My Creatures Reservations</h4>
         <ul>
-          <% @reservations.each do |reservation| %>
-            <% if reservation.user_id == current_user.id %>
-              <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} with #{reservation.creature.name} (Owner: #{reservation.creature.user.first_name}) | By You" %></li>
+          <% @creatures.each do |creature| %>
+            <% if creature.user_id == current_user.id %>
+                <% @reservations.each do |reservation| %>
+                  <% if reservation.creature == creature %>
+                    <%= "#{reservation.creature.name} | from #{reservation.starting_date} to #{reservation.ending_date}| By #{reservation.user.first_name}" %></li>
+                  <% end %>
+                <% end %>
             <% end %>
           <% end %>
         </ul>
