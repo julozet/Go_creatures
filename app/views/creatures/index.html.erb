@@ -1,5 +1,5 @@
-
-<h1 id="h1-index">All the amazing creatures we have!</h1>
+<br>
+<h4 id="h1-index">Here are all the most amazing creatures...</h4>
 <br>
 <div class="card-container">
   <% @creatures.each do |creature| %>
@@ -7,21 +7,29 @@
       <div class="card-product">
         <%= cl_image_tag creature.photo.key %>
         <div class="card-product-infos" id="card-text">
-          <h2><%=creature.name%></h2>
-          <p><strong> Address | </strong> <%= creature.address %></p>
-          <p><strong> Kind | </strong> <%= creature.kind %></p>
-          <p><strong> Price per day | </strong> <%= creature.price %>$</strong></p>
-          <p>
-            <strong> Owner | </strong>
-            <% if user_signed_in? == true %>
-              <% if creature.user_id == current_user.id %>
-                You
-              <% end %>
-            <% else %>
-              <%= creature.user.first_name %>
-            <% end %>
-          </p>
+          <div class="infos-title">
+            <h2><%=creature.name%></h2>
+            <p><%= creature.kind.upcase %></p>
+          </div>
+          <div class="infos-content">
+            <p><%= creature.description %></p>
+            <p><%= creature.address %></p>
+          </div>
         </div>
+          <div class="card-footer">
+            <p><%= creature.price %>$ /per day</p>
+            <p>
+              <% if user_signed_in? == true %>
+                <% if creature.user_id == current_user.id %>
+                  You
+                <% else %>
+                <%= creature.user.first_name %>
+                <% end %>
+              <% else %>
+                <%= creature.user.first_name %>
+              <% end %>
+            </p>
+          </div>
       </div>
     <% end %>
   <% end %>

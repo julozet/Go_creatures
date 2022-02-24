@@ -1,19 +1,17 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Reservation.destroy_all
+Creature.destroy_all
+User.destroy_all
+
 user_array = []
-  user = User.new(
-    email: "a@a.a",
-    password: "123456",
-    first_name: "Ramy",
-    last_name: "Sha"
-  )
-  user.save!
-  user_array << user
+user = User.new(
+  email: "a@a.a",
+  password: "123456",
+  first_name: "Ramy",
+  last_name: "Sha",
+  avatar_url: "https://avatars.githubusercontent.com/u/92589286?v=4"
+)
+user.save!
+user_array << user
 
   user = User.new(
     email: "c@c.c",
@@ -44,7 +42,7 @@ creature = Creature.new(
     description: "Nice big fat dragon to vainquish anything/one",
     address: "Belgium",
     price: "5000",
-    user_id: 1
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'dragon.jpg', content_type: 'image/jpg')
   creature.save!
@@ -57,7 +55,7 @@ creature = Creature.new(
   description: "Don't forget to feed it with blood",
   address: "Russia",
   price: "500",
-  user_id: 1
+  user: User.all.sample
 )
 creature.photo.attach(io: file, filename: 'vampire.jpg', content_type: 'image/jpg')
 creature.save!
@@ -70,7 +68,7 @@ creature = Creature.new(
   description: "Only availaible on full moon nights",
   address: "Netherlands",
   price: "100",
-  user_id: 2
+  user: User.all.sample
 )
 creature.photo.attach(io: file, filename: 'wolf.jpg', content_type: 'image/jpg')
 creature.save!
@@ -83,7 +81,7 @@ creature = Creature.new(
     description: "You love rainbows ?",
     address:"Bulgaria",
     price:"4500",
-    user_id: 2
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'uni.jpg', content_type: 'image/jpg')
   creature.save!
@@ -96,7 +94,7 @@ creature = Creature.new(
     description: "Big ol giant",
     address:"Indonesia",
     price:"450",
-    user_id: 2
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'giant.jpg', content_type: 'image/jpg')
   creature.save!
@@ -109,7 +107,7 @@ creature = Creature.new(
     description: "Arguably the most skilled navigators of the Astral Plane, the gaunt, yellow-skinned githyanki are the reavers of a thousand worlds.",
     address:"Charleroi",
     price:"200",
-    user_id: 1
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'git.jpg', content_type: 'image/jpg')
   creature.save!
@@ -122,7 +120,7 @@ creature = Creature.new(
     description: "Kuo-toa are sadistic, degenerate fish-like humanoids that once inhabited the shores and islands of the surface world.",
     address:"Chicago",
     price:"150",
-    user_id: 1
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'kuo.jpg', content_type: 'image/jpg')
   creature.save!
@@ -135,7 +133,7 @@ creature = Creature.new(
     description: "Devious serpent folk devoid of compassion, yuan-ti manipulate other creatures by arousing their doubts, evoking their fears, and elevating and crushing their hopes..",
     address:"Germany",
     price:"300",
-    user_id: 1
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'yan.png', content_type: 'image/png')
   creature.save!
@@ -148,7 +146,7 @@ creature = Creature.new(
     description: "An abominable horror from deep beneath the earth, an umber hulk burrows into cave complexes, dungeons, or Underdark settlements in search of food—especially the humanoid prey it craves.",
     address:"Brussels",
     price:"1000",
-    user_id: 2
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'umber.jpg', content_type: 'image/jpg')
   creature.save!
@@ -161,7 +159,7 @@ creature = Creature.new(
     description: "A lich is spawned when a great wizard embraces the evil state of undeath as a means of extending life beyond its mortal limits. Scheming and insane, they hunger for long-forgotten knowledge and the most terrible secrets.",
     address:"Oslo",
     price:"3000",
-    user_id: 2
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'lich.jpg', content_type: 'image/jpg')
   creature.save!
@@ -174,7 +172,7 @@ creature = Creature.new(
     description: "This monstrous predator takes its name from its ability to mask itself with illusion, displacing light so that it appears to be somewhere it is not.",
     address:"Kiev",
     price:"900",
-    user_id: 1
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'beast.jpg', content_type: 'image/jpg')
   creature.save!
@@ -187,7 +185,7 @@ creature = Creature.new(
     description: "The owlbear’s reputation for ferocity, aggression, stubbornness, and sheer ill temper makes it one of the most feared predators of the wild.",
     address:"Sofia",
     price:"300",
-    user_id: 1
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'owl.jpg', content_type: 'image/jpg')
   creature.save!
@@ -200,7 +198,7 @@ creature = Creature.new(
     description: "One glance at a beholder is enough to assess its foul and otherworldly nature. Aggressive, hateful, and greedy, these aberrations dismiss all other creatures as lesser beings, toying with them or destroying them as they choose....",
     address:"Roma",
     price:"2200",
-    user_id: 2
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'holder.jpg', content_type: 'image/jpg')
   creature.save!
@@ -213,7 +211,7 @@ creature = Creature.new(
     description: "The only creatures native to the inhospitable realm of Limbo are the batrachian slaadi, which thrive in the chaotic torrent of its elements.",
     address:"Nice",
     price:"1100",
-    user_id: 1
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'slaad.jpg', content_type: 'image/jpg')
   creature.save!
@@ -226,7 +224,7 @@ creature = Creature.new(
     description: "Bulettes (or land sharks) use their powerful claws to tunnel through the earth when they hunt.",
     address:"Instanbul",
     price:"1700",
-    user_id: 2
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'bulette.jpg', content_type: 'image/jpg')
   creature.save!
@@ -239,7 +237,7 @@ creature = Creature.new(
     description: "Psionic tyrants, slavers, and interdimensional voyagers, mind flayers are insidious masterminds that harvest entire races for their own twisted ends.",
     address:"Ljubljana",
     price:"400",
-    user_id: 1
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'mind.jpg', content_type: 'image/jpg')
   creature.save!
@@ -252,7 +250,7 @@ creature = Creature.new(
     description: "These strange, normally docile creatures corrode ferrous metals, then gobble up the rust they create.",
     address:"Split",
     price:"175",
-    user_id: 1
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'rust.png', content_type: 'image/png')
   creature.save!
@@ -265,7 +263,7 @@ creature = Creature.new(
     description: "These creatures scour dungeon passages in silent, predictable patterns, leaving perfectly clean paths in their wake. They consume living tissue while leaving bones and other materials undissolved.",
     address:"Toronto",
     price:"245",
-    user_id: 2
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'cube.jpg', content_type: 'image/jpg')
   creature.save!
@@ -278,7 +276,7 @@ creature = Creature.new(
     description: "A cloud giant earns its place in the ordning by the treasure it accumulates, the wealth it wears, and the gifts it bestows on other cloud giants.",
     address:"Paris",
     price:"1200",
-    user_id: 1
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'cloud.jpg', content_type: 'image/jpg')
   creature.save!
@@ -291,7 +289,7 @@ creature = Creature.new(
     description: "Kobolds are craven reptilian humanoids that worship evil dragons as demigods and serve them as minions and toadies.",
     address:"Namur",
     price:"1050",
-    user_id: 2
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'kubold.jpg', content_type: 'image/jpg')
   creature.save!
@@ -304,7 +302,7 @@ creature = Creature.new(
     description: "Fire giants have a fearsome reputation as soldiers and conquerors, and for their ability to burn, plunder, and destroy.",
     address:"Antwerp",
     price:"2100",
-    user_id: 2
+    user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'fire.jpg', content_type: 'image/jpg')
   creature.save!
