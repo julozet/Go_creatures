@@ -22,7 +22,7 @@
           <% if creature.user_id == current_user.id %>
             <%= link_to creature_path(creature) do %>
               <div class="card-creature">
-                <img src="<%= creature.picture_url %>" />
+                <%= cl_image_tag creature.photo.key %>
                 <div class="card-creature-infos">
                   <h2><%=creature.name%></h2>
                   <p><%= creature.address %></p>

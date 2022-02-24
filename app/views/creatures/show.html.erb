@@ -2,7 +2,7 @@
   <div class="col-md-8">
     <div class="show-container">
       <div class="card-show">
-        <img src="<%= @creature.picture_url %>" />
+        <%= cl_image_tag @creature.photo.key %>
         <div class="test">
           <div class="card-show-infos" id="card-text">
             <h2><%=@creature.name%></h2>

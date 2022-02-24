@@ -5,7 +5,7 @@
   <% @creatures.each do |creature| %>
     <%= link_to creature_path(creature) do %>
       <div class="card-product">
-        <img src="<%= creature.picture_url %>" />
+        <%= cl_image_tag creature.photo.key %>
         <div class="card-product-infos" id="card-text">
           <h2><%=creature.name%></h2>
           <p><strong> Address | </strong> <%= creature.address %></p>
@@ -26,3 +26,5 @@
     <% end %>
   <% end %>
 </div>
+<br>
+<br>
