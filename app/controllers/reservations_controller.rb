@@ -24,13 +24,14 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.delete
-    redirect_to creature_path(@reservation.creature)
+    redirect_to dashboard_path
   end
 
   def accept
     @reservation = Reservation.find(params[:id])
     @reservation.status = "accepted"
     @reservation.save
+    redirect_to dashboard_path
   end
 
   def decline

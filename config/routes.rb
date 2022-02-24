@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :reservations, only: [:new, :create]
   end
   resources :reservations, only: [:destroy, :show]
-  patch 'reservations/:id', to: 'reservations#accept', as: "accept"
+  patch 'reservations/:id', to: 'reservations#accept'
   patch 'reservations/:id', to: 'reservations#decline'
   get 'dashboard', to: 'pages#dashboard'
 end
