@@ -10,17 +10,6 @@
             <p><%= @creature.kind %></p>
             <p><strong><%= @creature.price %>$</strong></p>
           </div>
-          <div id="edit">
-            <% if @creature.user == current_user %>
-              <p><%= link_to "Edit creature", edit_creature_path(@creature) %></p>
-              <p><%= link_to "Delete #{@creature.name}",
-                creature_path(@creature),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %></p>
-            <% else %>
-              <p><%= link_to "Make Reservation", new_creature_reservation_path(@creature.id) %></p>
-            <% end %>
-          </div>
         </div>
       </div>
     </div>
@@ -31,8 +20,13 @@
   </div>
   <div class="col-md-4">
     <div id="reservation-box">
-      <h2>Reservation</h2>
-      <%= render 'reservations/form', creature: @creature, reservation: @reservation %>
+      <% if @creature.user == current_user %>
+        <h2>Creature Details</h2>
+        <%= render 'creatures/edit', creature: @creature %>
+      <% else %>
+        <h2>Reservation</h2>
+        <%= render 'reservations/new', creature: @creature, reservation: @reservation %>
+      <% end %>
     </div>
   </div>
 </div>
