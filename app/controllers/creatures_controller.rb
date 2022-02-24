@@ -16,7 +16,8 @@ class CreaturesController < ApplicationController
   end
 
   def show
-    @reservation = @creature.id
+    @creature = Creature.find(params[:id])
+    @reservation = Reservation.new
   end
 
   def new
@@ -56,5 +57,9 @@ class CreaturesController < ApplicationController
 
   def creature_params
     params.require(:creature).permit(:name, :address, :price, :description, :photo, :kind)
+  end
+
+  def reservation_params
+    params.require(:reservation).permit(:starting_date, :ending_date)
   end
 end

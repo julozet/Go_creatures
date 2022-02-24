@@ -19,3 +19,31 @@
 .reservation-request li {
   list-style: none;
 }
+
+.datepicker {
+  width: 0px;
+}
+
+.calendar {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.reservation_starting_date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reservation_ending_date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reservation_calendar {
+  position: absolute;
+  top: 50px;
+  transform: scale(0.8);
+}

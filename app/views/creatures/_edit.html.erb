@@ -1,0 +1,21 @@
+<div class="container">
+  <%= simple_form_for @creature do |f| %>
+    <%= f.input :name %>
+    <%= f.input :kind %>
+    <%= f.input :description %>
+    <%= f.input :address %>
+    <%= f.input :price %>
+    <%= f.input :photo, as: :file %>
+    <div class = "buttons">
+      <%= f.submit class: 'btn btn-primary' %>
+      <%= link_to "Delete #{@creature.name}",
+            creature_path(@creature),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: 'btn btn-danger'%>
+    </div>
+
+  <% end %>
+</div>
+<br>
+<br>

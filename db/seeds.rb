@@ -8,7 +8,7 @@ user = User.new(
   password: "123456",
   first_name: "Ramy",
   last_name: "Sha",
-  avatar_url: "https://avatars.githubusercontent.com/u/92589286?v=4"
+  avatar_url: "https://avatars.githubusercontent.com/u/96581841?v=4"
 )
 user.save!
 user_array << user
@@ -58,6 +58,7 @@ creature = Creature.new(
   user: User.all.sample
 )
 creature.photo.attach(io: file, filename: 'vampire.jpg', content_type: 'image/jpg')
+p creature.photo.key
 creature.save!
 creature_array << creature
 
@@ -71,6 +72,7 @@ creature = Creature.new(
   user: User.all.sample
 )
 creature.photo.attach(io: file, filename: 'wolf.jpg', content_type: 'image/jpg')
+p creature.photo.key
 creature.save!
 creature_array << creature
 
@@ -84,6 +86,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'uni.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -97,6 +100,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'giant.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -110,6 +114,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'git.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -123,6 +128,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'kuo.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -136,6 +142,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'yan.png', content_type: 'image/png')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -149,6 +156,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'umber.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -162,6 +170,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'lich.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -175,6 +184,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'beast.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -188,6 +198,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'owl.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -201,6 +212,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'holder.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -214,6 +226,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'slaad.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -227,6 +240,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'bulette.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -240,6 +254,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'mind.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -253,6 +268,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'rust.png', content_type: 'image/png')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -266,6 +282,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'cube.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -279,6 +296,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'cloud.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -292,6 +310,7 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'kubold.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
 
@@ -305,5 +324,6 @@ creature = Creature.new(
     user: User.all.sample
   )
   creature.photo.attach(io: file, filename: 'fire.jpg', content_type: 'image/jpg')
+  p creature.photo.key
   creature.save!
   creature_array << creature
