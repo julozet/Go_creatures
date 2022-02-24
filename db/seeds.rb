@@ -10,7 +10,8 @@ user_array = []
     email: "a@a.a",
     password: "123456",
     first_name: "Ramy",
-    last_name: "Sha"
+    last_name: "Sha",
+    avatar_url: "https://avatars.githubusercontent.com/u/92589286?v=4"
   )
   user.save!
   user_array << user
