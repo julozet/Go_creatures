@@ -13,8 +13,10 @@
           <p><strong> Price per day | </strong> <%= creature.price %>$</strong></p>
           <p>
             <strong> Owner | </strong>
-            <% if creature.user_id == current_user.id %>
-              You
+            <% if user_signed_in? == true %>
+              <% if creature.user_id == current_user.id %>
+                You
+              <% end %>
             <% else %>
               <%= creature.user.first_name %>
             <% end %>
