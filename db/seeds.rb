@@ -1,5 +1,6 @@
 Creature.destroy_all
 User.destroy_all
+Reservation.destroy_all
 
 user_array = []
 user = User.new(
