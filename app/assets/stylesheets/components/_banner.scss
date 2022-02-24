@@ -1,9 +1,12 @@
 .banner {
+  //background-image: url(https://wallpaperaccess.com/full/279729.jpg);
+  //background-image: url('https://wallpaperaccess.com/full/279729.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
   background-size: cover;
   background-position: center;
   padding: 150px 0;
   text-align: center;
-
+  height: 100vh;
 }
 
 .banner h1 {
@@ -19,4 +22,19 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-gradient {
+  color: black;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#fab553, #ce6f43);
+  transition: background 0.3s ease;
+  //border: 1px solid #0F60C4;
+}
+
+.btn-gradient:hover {
+  //background: linear-gradient(#147EFF, #0F67DA);
+  color: white;
 }
