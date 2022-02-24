@@ -2,15 +2,15 @@ Creature.destroy_all
 User.destroy_all
 
 user_array = []
-  user = User.new(
-    email: "a@a.a",
-    password: "123456",
-    first_name: "Ramy",
-    last_name: "Sha",
-    avatar_url: "https://avatars.githubusercontent.com/u/92589286?v=4"
-  )
-  user.save!
-  user_array << user
+user = User.new(
+  email: "a@a.a",
+  password: "123456",
+  first_name: "Ramy",
+  last_name: "Sha",
+  avatar_url: "https://avatars.githubusercontent.com/u/92589286?v=4"
+)
+user.save!
+user_array << user
 
   user = User.new(
     email: "c@c.c",
