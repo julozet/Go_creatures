@@ -1,18 +1,25 @@
-.my-creature-reservation-container {
-  background-color: white;
+.creature-reservation-container {
   padding: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 10px;
+  background: $go-light-grey;
+  box-shadow: 8px 9px 13px 1px rgba(0,0,0,0.63);
+  border-radius: 7px;
 }
 
-.reservation-request {
-  background-color: white;
+.creature-request-container {
   padding: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 10px;
+  background: $go-light-grey;
+  box-shadow: 8px 9px 13px 1px rgba(0,0,0,0.63);
+  border-radius: 7px;
 }
 
-.my-creature-reservation-container li {
+.reservation {
+  padding: 10px;
+  background: $go-light-grey;
+  box-shadow: 8px 9px 13px 1px rgba(0,0,0,0.63);
+  border-radius: 7px;
+}
+
+.reservation li {
   list-style: none;
 }
 

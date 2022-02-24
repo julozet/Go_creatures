@@ -1,15 +1,64 @@
-.main-container {
-  padding: 10px;
+.dashboard-container {
+  width: auto;
+  justify-content: center;
+  padding: 0px 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 
-.creature-container {
-  width: 50%;
+.right-container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  position: sticky;
+  top: 20px;
 }
 
-.reservation-container {
-  width: 500px;
+.left-container {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.first-row {
+  display: flex;
+  justify-content: space-between;
+  grid-gap: 10px;
+  margin-bottom: 20px;
+  height: 200px;
+}
+
+.second-row {
+}
+
+.profile-container {
+  width: 100%;
+  height: 300px;
+  background-color: $go-light-grey;
+  box-shadow: 8px 9px 13px 1px rgba(0,0,0,0.63);
+  color: white;
+  margin: 0px 0px 20px 0px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & h4 {
+    color: white;
+  }
+}
+
+.creature-request-container {
+  width: 100%;
+}
+
+.creature-reservation-container {
+  width: 100%;
+}
+
+.reservation {
+  width: 100%;
 }
