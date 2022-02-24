@@ -11,7 +11,14 @@
           <p><strong> Address | </strong> <%= creature.address %></p>
           <p><strong> Kind | </strong> <%= creature.kind %></p>
           <p><strong> Price per day | </strong> <%= creature.price %>$</strong></p>
-          <p><strong> Owner | </strong> <%= creature.user.first_name %></p>
+          <p>
+            <strong> Owner | </strong>
+            <% if creature.user_id == current_user.id %>
+              You
+            <% else %>
+              <%= creature.user.first_name %>
+            <% end %>
+          </p>
         </div>
       </div>
     <% end %>
