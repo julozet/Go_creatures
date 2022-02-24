@@ -5,7 +5,6 @@ class ReservationsController < ApplicationController
 
   def new
     @creature = Creature.find(params[:creature_id])
-    @reservation = Reservation.new
   end
 
   def create

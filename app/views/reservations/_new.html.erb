@@ -1,0 +1,7 @@
+<div data-controller = "calendar", class = "calendar">
+  <%= simple_form_for [ creature, reservation ], :html => { class: 'reservation_calendar' }  do |f| %>
+    <%= f.input :starting_date, as: :string, :label => "From", :required => false, input_html: { class: "datepicker d-none", data: {'calendar-target' => "start" }}%>
+    <%= f.input :ending_date, as: :string, :label => "To", :required => false, input_html: { class: "datepicker d-none", data: {'calendar-target' => "end" }} %>
+    <%= f.submit %>
+  <% end %>
+</div>
