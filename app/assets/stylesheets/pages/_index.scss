@@ -1,9 +1,14 @@
 // Import page-specific CSS files here.
 @import "home";
 
+body {
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(55,55,55,1) 50%, rgba(0,0,0,1) 100%);
+}
+
 .card-container {
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   width: 100%;
   padding-right: var(--bs-gutter-x, 0.75rem);
