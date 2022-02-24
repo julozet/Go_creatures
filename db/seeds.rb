@@ -8,7 +8,7 @@ user = User.new(
   password: "123456",
   first_name: "Ramy",
   last_name: "Sha",
-  avatar_url: "https://avatars.githubusercontent.com/u/92589286?v=4"
+  avatar_url: "https://avatars.githubusercontent.com/u/96581841?v=4"
 )
 user.save!
 user_array << user
