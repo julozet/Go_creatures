@@ -4,6 +4,15 @@ class CreaturesController < ApplicationController
 
   def index
     @creatures = Creature.all
+
+    @markers = @creatures.geocoded.map do |creature|
+      {
+        lat: creature.latitude,
+        lng: creature.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { creature: creature }),
+        image_url: helpers.asset_url("https://www.cp-desk.com/wp-content/uploads/2019/02/map-marker-free-download-png.png")
+      }
+    end
   end
 
   def show
