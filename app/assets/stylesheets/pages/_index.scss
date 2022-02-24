@@ -8,15 +8,21 @@ body {
 
 .card-container {
   display: grid;
+  //flex-wrap: wrap;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   width: 100%;
   padding-right: var(--bs-gutter-x, 0.75rem);
   padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 10px;
+  margin-left: 10px;
+  justify-content: center;
 }
 
 #h1-index {
   text-align: center;
+}
+
+h4 {
+  color: $go-light-grey;
 }
