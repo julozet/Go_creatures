@@ -1,4 +1,46 @@
+.profile-info { //principal dans le dashboard.scc
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+
+  & ul {
+    padding-left: 0px;
+    width: 100%;
+
+  }
+
+  & li {
+    list-style: none;
+    margin-bottom: 5px;
+    text-align:justify;
+    color: $go-light-grey;
+  }
+
+  & h4 {
+    color: $go-light-orange;
+    margin-top: 20px;
+  }
+
+  & h5 {
+    color: $go-dark-orange;
+
+  }
+}
+
+.profile-container {
+  justify-content: space-around;
+}
+
 .profile-container img {
   width: 100px;
   border-radius: 50%;
+}
+
+.profile-picture-container {
+  display: flex;
+  //position: relative;
+  justify-content: center;
+  align-items: center;
 }

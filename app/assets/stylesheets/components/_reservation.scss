@@ -1,30 +1,51 @@
+.right-container {
+  & h5 {
+    color: $go-dark-orange;
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+
+  & ul {
+    padding-left: 0px;
+  }
+
+  & li {
+    list-style: none;
+    color: $go-light-grey;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  & a {
+    text-decoration: none;
+    color: $go-light-orange;
+  }
+
+  & a :hover {
+    opacity: 0.8;
+  }
+}
+
+
 .creature-reservation-container {
   padding: 10px;
-  background: $go-light-grey;
+  background: $go-dark-grey;
   box-shadow: 8px 9px 13px 1px rgba(0,0,0,0.63);
   border-radius: 7px;
 }
 
 .creature-request-container {
   padding: 10px;
-  background: $go-light-grey;
+  background: $go-dark-grey;
   box-shadow: 8px 9px 13px 1px rgba(0,0,0,0.63);
   border-radius: 7px;
 }
 
 .reservation {
   padding: 10px;
-  background: $go-light-grey;
+  background: $go-dark-grey;
   box-shadow: 8px 9px 13px 1px rgba(0,0,0,0.63);
   border-radius: 7px;
-}
-
-.reservation li {
-  list-style: none;
-}
-
-.reservation-request li {
-  list-style: none;
 }
 
 .datepicker {
