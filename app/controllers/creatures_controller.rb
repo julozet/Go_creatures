@@ -10,7 +10,7 @@ class CreaturesController < ApplicationController
         lat: creature.latitude,
         lng: creature.longitude,
         info_window: render_to_string(partial: "info_window", locals: { creature: creature }),
-        image_url: helpers.asset_url('https://www.pngall.com/wp-content/uploads/2017/05/Map-Marker-Free-Download-PNG.png')
+        image_url: helpers.asset_url('Map-Marker-Free-Download-PNG.png')
       }
     end
   end
