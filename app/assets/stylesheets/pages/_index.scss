@@ -4,18 +4,26 @@
 body {
   background: rgb(12, 12, 12);
   background: linear-gradient(0deg, rgb(19, 19, 19) 0%, rgba(55,55,55,1) 50%, rgb(20, 20, 20) 100%);
+  padding-top: 60px; /* height of sticky header */
+}
+
+#h1-index {
+  //font-family: 'MedievalSharp', cursive;
+  font-size: 24px;
+  color: white;
+  margin-bottom: 20px;
 }
 
 .card-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 40px;
+  grid-gap: auto;
   width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: 50px;
-  margin-left: 50px;
-  justify-content: center;
+  padding: 0 4rem;
+  // padding-right: var(--bs-gutter-x, 0.75rem);
+  // padding-left: var(--bs-gutter-x, 0.75rem);
+  // margin-right: 50px;
+  // margin-left: 50px;
 }
 
 // Smallest device

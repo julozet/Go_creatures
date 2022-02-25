@@ -14,3 +14,7 @@
 @import "pages/index";
 @import "pages/dashboard";
 @import "mapbox-gl/dist/mapbox-gl";
+
+html {
+  scroll-padding-top: 70px; /* height of sticky header */
+}
