@@ -10,11 +10,11 @@ class CreaturesController < ApplicationController
         lat: creature.latitude,
         lng: creature.longitude,
         info_window: render_to_string(partial: "info_window", locals: { creature: creature }),
-        image_url: helpers.asset_url("https://www.cp-desk.com/wp-content/uploads/2019/02/map-marker-free-download-png.png")
+        image_url: helpers.asset_url('https://www.pngall.com/wp-content/uploads/2017/05/Map-Marker-Free-Download-PNG.png')
       }
     end
   end
-
+  #'../assets/images/marker.png'
   def show
     @creature = Creature.find(params[:id])
     @reservation = Reservation.new
