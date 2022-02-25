@@ -4,10 +4,11 @@
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   height: 100vh;
-  align-items: center;
 }
 
 .banner h1 {
@@ -39,4 +40,5 @@
   //background: linear-gradient(#147EFF, #0F67DA);
   //color: white;
   transform: scale(1.1);
+  color: white;
 }

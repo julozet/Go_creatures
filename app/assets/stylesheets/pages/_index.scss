@@ -4,12 +4,14 @@
 body {
   background: rgb(12, 12, 12);
   background: linear-gradient(0deg, rgb(19, 19, 19) 0%, rgba(55,55,55,1) 50%, rgb(20, 20, 20) 100%);
+  padding-top: 60px; /* height of sticky header */
 }
 
 #h1-index {
-  font-family: 'MedievalSharp', cursive;
-  font-size: 40px;
+  //font-family: 'MedievalSharp', cursive;
+  font-size: 24px;
   color: white;
+  margin-bottom: 20px;
 }
 
 .card-container {
