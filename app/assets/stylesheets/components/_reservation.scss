@@ -101,6 +101,6 @@
   border-color: $go-light-orange;
   border-radius: 7px;
   &:hover {
-    font-weight: bolder;
+    filter: brightness(125%);
   };
 }
