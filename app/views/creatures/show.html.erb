@@ -1,32 +1,30 @@
-<div class="row">
-  <div class="col-md-8">
-    <div class="show-container">
+<div class="show-container">
+  <div class="row">
+    <div class="col-md-8">
       <div class="card-show">
         <%= cl_image_tag @creature.photo.key %>
-        <div class="test">
-          <div class="card-show-infos" id="card-text">
-            <h2><%=@creature.name%></h2>
-            <p><%= @creature.address %></p>
-            <p><%= @creature.kind %></p>
-            <p><strong><%= @creature.price %>$</strong></p>
-          </div>
+        <div class="card-show-infos" id="card-text">
+          <h2><%=@creature.name%></h2>
+          <p><%= @creature.address %></p>
+          <p><%= @creature.kind %></p>
+          <p><strong><%= @creature.price %>$</strong></p>
         </div>
       </div>
+      <div id="description-box">
+        <h2>Description</h2>
+        <p><%= @creature.description %></p>
+      </div>
     </div>
-    <div id="description-box">
-      <h2>Description</h2>
-      <p><%= @creature.description %></p>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div id="reservation-box">
-      <% if @creature.user == current_user %>
-        <h2>Creature Details</h2>
-        <%= render 'creatures/edit', creature: @creature %>
-      <% else %>
-        <h2>Reservation</h2>
-        <%= render 'reservations/new', creature: @creature, reservation: @reservation %>
-      <% end %>
+    <div class="col-md-4">
+      <div id="reservation-box">
+        <% if @creature.user == current_user %>
+          <h2>Creature Details</h2>
+          <%= render 'creatures/edit', creature: @creature %>
+        <% else %>
+          <h2>Reservation</h2>
+          <%= render 'reservations/new', creature: @creature, reservation: @reservation %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

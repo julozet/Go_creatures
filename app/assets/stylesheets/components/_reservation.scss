@@ -56,22 +56,41 @@
   margin: 0;
   display: flex;
   justify-content: center;
+  height: 550px;
 }
 
 .reservation_starting_date {
+  position: relative;
+  bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: .7;
+  color: $go-light-grey;
+  margin-top: 20px;
 }
 
 .reservation_ending_date {
+  position: relative;
+  bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: .7;
+  color: $go-light-grey;
+  margin-top: 20px;
 }
 
 .reservation_calendar {
-  position: absolute;
-  top: 50px;
-  transform: scale(0.8);
+  transform: scale(0.75);
+}
+
+.button {
+  position: relative;
+  bottom: 100px;
+  color: blue;
 }
