@@ -4,7 +4,13 @@ class CreaturesController < ApplicationController
 
   def index
     if params[:query].present?
-      @creatures = Creature.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_query = " \
+        creatures.name ILIKE :query \
+        OR creatures.description ILIKE :query \
+        OR creatures.kind ILIKE :query \
+        OR creatures.address ILIKE :query \
+      "
+      @creatures = Creature.where(sql_query, query: "%#{params[:query]}%")
     else
       @creatures = Creature.all
     end
