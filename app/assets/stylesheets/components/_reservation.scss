@@ -69,7 +69,6 @@
   line-height: 1.4;
   opacity: .7;
   color: $go-light-grey;
-  margin-top: 20px;
 }
 
 .reservation_ending_date {
@@ -82,7 +81,6 @@
   line-height: 1.4;
   opacity: .7;
   color: $go-light-grey;
-  margin-top: 20px;
 }
 
 .reservation_calendar {
@@ -92,5 +90,17 @@
 .button {
   position: relative;
   bottom: 100px;
-  color: blue;
+  width: 100%;
+  height: 40px;
+  background-color: $go-light-orange;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  color: $go-dark-grey;
+  font-weight: bolder;
+  border-color: $go-light-orange;
+  border-radius: 7px;
+  &:hover {
+    font-weight: bolder;
+  };
 }

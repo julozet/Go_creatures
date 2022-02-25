@@ -1,6 +1,3 @@
-.body-container {
-
-}
 
 .show-container {
   display: grid;
@@ -36,7 +33,7 @@
   color: $go-light-grey;
 }
 
-#reservation-box {
+#form-box {
   overflow: hidden;
   height: 640px;
   background: $go-dark-grey;
@@ -44,10 +41,10 @@
   border-radius: 10px;
 }
 
-#reservation-box h2 {
+#form-box h2 {
   font-size: 28px;
   font-weight: bold;
-  margin-top: 32px;
+  margin-top: 24px;
   text-decoration: none;
   color: $go-dark-orange;
   display: flex;
