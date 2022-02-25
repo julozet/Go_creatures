@@ -3,7 +3,17 @@ class CreaturesController < ApplicationController
   before_action :find_creature, only: [:show, :edit, :update, :destroy]
 
   def index
-    @creatures = Creature.all
+    if params[:query].present?
+      sql_query = " \
+        creatures.name ILIKE :query \
+        OR creatures.description ILIKE :query \
+        OR creatures.kind ILIKE :query \
+        OR creatures.address ILIKE :query \
+      "
+      @creatures = Creature.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @creatures = Creature.all
+    end
 
     @markers = @creatures.geocoded.map do |creature|
       {
@@ -14,7 +24,7 @@ class CreaturesController < ApplicationController
       }
     end
   end
-  #'../assets/images/marker.png'
+
   def show
     @creature = Creature.find(params[:id])
     @reservation = Reservation.new

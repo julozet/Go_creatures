@@ -6,4 +6,11 @@ class Creature < ApplicationRecord
 
   validates :name, :kind, :description, :photo, :address, :price, presence: true
   after_validation :geocode, if: :will_save_change_to_address?
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_kind,
+    against: [ :name, :kind ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
