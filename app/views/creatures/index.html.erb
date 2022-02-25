@@ -3,7 +3,7 @@
 <br>
 <div class="card-container">
   <% @creatures.each do |creature| %>
-    <%= link_to creature_path(creature) do %>
+    <%= link_to creature_path(creature), class:"d-flex justify-content-center" do %>
       <div class="card-product">
         <%= cl_image_tag creature.photo.key %>
         <div class="card-product-infos" id="card-text">

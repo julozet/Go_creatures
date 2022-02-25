@@ -9,13 +9,13 @@ body {
 .card-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 40px;
+  grid-gap: auto;
   width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: 50px;
-  margin-left: 50px;
-  justify-content: center;
+  padding: 0 4rem;
+  // padding-right: var(--bs-gutter-x, 0.75rem);
+  // padding-left: var(--bs-gutter-x, 0.75rem);
+  // margin-right: 50px;
+  // margin-left: 50px;
 }
 
 // Smallest device
