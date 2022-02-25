@@ -8,6 +8,7 @@
 
 .right-container {
   display: flex;
+  height: fit-content;
   flex-direction: column;
   width: 60%;
   position: sticky;
@@ -28,9 +29,11 @@
   grid-gap: 10px;
   margin-bottom: 20px;
   height: 200px;
+  position: sticky;
 }
 
 .second-row {
+  position: sticky;
 }
 
 .profile-container {
