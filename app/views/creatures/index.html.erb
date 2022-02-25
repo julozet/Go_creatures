@@ -1,6 +1,7 @@
-<br>
-<h4 id="h1-index">Here are all the most amazing creatures...</h4>
-<br>
+<div id="search-form">
+  <h4 id="h1-index">Here are all the most amazing creatures...</h4>
+  <%= render 'shared/search' %>
+</div>
 <div class="card-container">
   <% @creatures.each do |creature| %>
     <%= link_to creature_path(creature) do %>
