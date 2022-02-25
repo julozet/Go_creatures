@@ -6,6 +6,12 @@ body {
   background: linear-gradient(0deg, rgb(19, 19, 19) 0%, rgba(55,55,55,1) 50%, rgb(20, 20, 20) 100%);
 }
 
+#h1-index {
+  font-family: 'MedievalSharp', cursive;
+  font-size: 40px;
+  color: white;
+}
+
 .card-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
