@@ -1,104 +1,113 @@
-  <div class="tab-container">
-    <ul class="list-inline tabs-underlined">
-      <li>
-        <a href="<%=new_creature_path%>" class="tab-underlined active">Add creature |</a>
-      </li>
-      <li>
-        <a href="#" class="tab-underlined"> Creatures reservations |</a>
-      </li>
-      <li>
-        <a href="#" class="tab-underlined">My reservations </a>
-      </li>
-    </ul>
-    <br>
-  </div>
-    <h4>Welcome to your dashboard <%= current_user.first_name %> ! </h4>
+  <div class="dashboard-container">
 
-  <div class="main-container">
+      <div class="left-container">
+        <div class="profile-container">
+            <div class="profile-picture-container">
+              <img class="profile-picture" src="<%= current_user.avatar_url%>" alt="">
+            </div>
+            <div class="profile-info">
+              <h4>Welcome <%= current_user.first_name %></h4>
+                <ul>
+                  <h5>Your personnal informations</h5>
+                  <br>
+                  <li>First name |  <%= current_user.first_name %></li>
+                  <li>Last name |  <%= current_user.last_name %></li>
+                  <li>Email |  <%= current_user.email %></li>
+                  <li>Number of creatures |  <%= current_user.creatures.count %></li>
+                </ul>
+            </div>
+        </div>
+        <br>
 
-    <div class="creature-container">
-      <div class="creature-card">
-        <% @creatures.each do |creature| %>
-          <% if creature.user_id == current_user.id %>
-            <%= link_to creature_path(creature) do %>
-              <div class="card-creature">
-                <%= cl_image_tag creature.photo.key %>
-                <div class="card-creature-infos">
-                  <h2><%=creature.name%></h2>
-                  <p><%= creature.address %></p>
-                  <p><%= creature.kind %></p>
-                  <p><strong><%= creature.price %>$</strong></p>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        <% end %>
+        <div class="creature-container">
+          <h5>My creatures</h5>
+            <div class="creature-card">
+              <% @creatures.each do |creature| %>
+                <% if creature.user_id == current_user.id %>
+                  <%= link_to creature_path(creature) do %>
+                    <div class="card-creature">
+                      <%= cl_image_tag creature.photo.key %>
+                      <div class="card-creature-infos">
+                        <h2><%=creature.name%></h2>
+                        <p><%= creature.address %></p>
+                        <p><%= creature.kind %></p>
+                        <p><strong><%= creature.price %>$</strong></p>
+                      </div>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+        </div>
       </div>
-    </div>
 
-    <div class="reservation-container">
-      <div class="reservation-request">
-      <h4> My reservations</h4>
-      <br>
-        <ul>
-          <% @reservations.each do |reservation| %>
-            <% if reservation.user_id == current_user.id %>
-              <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} for #{reservation.creature.name} (Owner: #{reservation.creature.user.first_name}) | Satus: #{reservation.status} |" %></li>
-                  <%= link_to "Cancel Reservation",
-                      reservation_path(reservation),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" }
-                  %>
-            <% end %>
-          <% end %>
-        </ul>
-      </div>
-      <br>
+      <div class="right-container">
+        <br>
+          <div class="first-row">
+            <div class="creature-request-container">
+              <h5>My Creatures Requests</h5>
+              <ul>
+                <% @creatures.each do |creature| %>
+                  <% if creature.user_id == current_user.id %>
+                      <% @reservations.each do |reservation| %>
+                        <% if reservation.creature == creature && reservation.status == "pending" %>
+                          <li>
+                            <%= "#{reservation.creature.name} | from #{reservation.starting_date} to #{reservation.ending_date}| By #{reservation.user.first_name} | " %>
+                            <%= link_to "Accept",
+                              reservation_path(reservation),
+                              method: :patch,
+                              data: { confirm: "Are you sure?" }
+                              %> / <%=  link_to "Decline",
+                              reservation_path(reservation),
+                              method: :delete,
+                              data: { confirm: "Are you sure?" }
+                              %>
+                          </li>
+                        <% end %>
+                      <% end %>
+                  <% end %>
+                <% end %>
+              </ul>
+            </div>
 
-      <div class="my-creature-reservation-container">
-        <h4>My Creatures Reservations - Requests</h4>
-        <ul>
-          <% @creatures.each do |creature| %>
-            <% if creature.user_id == current_user.id %>
+            <br>
+            <div class="creature-reservation-container">
+              <h5>My Creatures Reservations - Approved</h5>
+              <ul>
+                <% @creatures.each do |creature| %>
+                  <% if creature.user_id == current_user.id %>
+                      <% @reservations.each do |reservation| %>
+                        <% if reservation.creature == creature && reservation.status == "accepted" %>
+                          <li>
+                            <%= "#{reservation.creature.name} | from #{reservation.starting_date} to #{reservation.ending_date}| By #{reservation.user.first_name} |" %>
+                          </li>
+                        <% end %>
+                      <% end %>
+                  <% end %>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+
+        <div class="second-row">
+          <div class="reservation">
+            <h5> My reservations</h5>
+              <ul>
                 <% @reservations.each do |reservation| %>
-                  <% if reservation.creature == creature && reservation.status == "pending" %>
-                    <li>
-                      <%= "#{reservation.creature.name} | from #{reservation.starting_date} to #{reservation.ending_date}| By #{reservation.user.first_name} | " %>
-                      <%= link_to "Accept",
-                        reservation_path(reservation),
-                        method: :patch,
-                        data: { confirm: "Are you sure?" }
-                        %> / <%=  link_to "Decline",
-                        reservation_path(reservation),
-                        method: :delete,
-                        data: { confirm: "Are you sure?" }
+                  <% if reservation.user_id == current_user.id %>
+                    <li><%= "Reservation from #{reservation.starting_date} to #{reservation.ending_date} for #{reservation.creature.name} (Owner: #{reservation.creature.user.first_name}) | Satus: #{reservation.status} |" %></li>
+                        <%= link_to "Cancel Reservation",
+                            reservation_path(reservation),
+                            method: :delete,
+                            data: { confirm: "Are you sure?" }
                         %>
-                    </li>
                   <% end %>
                 <% end %>
-            <% end %>
-          <% end %>
-        </ul>
+              </ul>
+          </div>
+        </div>
+
       </div>
 
-      <br>
-      <div class="my-creature-reservation-container">
-        <h4>My Creatures Reservations - Approved</h4>
-        <ul>
-          <% @creatures.each do |creature| %>
-            <% if creature.user_id == current_user.id %>
-                <% @reservations.each do |reservation| %>
-                  <% if reservation.creature == creature && reservation.status == "accepted" %>
-                    <li>
-                      <%= "#{reservation.creature.name} | from #{reservation.starting_date} to #{reservation.ending_date}| By #{reservation.user.first_name} |" %>
-                    </li>
-                  <% end %>
-                <% end %>
-            <% end %>
-          <% end %>
-        </ul>
-      </div>
-
-    </div>
 
   </div>

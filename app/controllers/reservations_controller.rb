@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to creature_path(@creature)
     else
-      render :new
+      redirect_to creature_path(@creature)
     end
   end
 
