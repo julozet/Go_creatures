@@ -40,7 +40,7 @@ creature = Creature.new(
     name: "Mighty",
     kind: "dragon",
     description: "Nice big fat dragon to vainquish anything/one",
-    address: "far mountain, 45",
+    address: "Belgium",
     price: "5000",
     user: User.all.sample
   )
@@ -53,7 +53,7 @@ creature = Creature.new(
   name: "Vampy",
   kind: "vampire",
   description: "Don't forget to feed it with blood",
-  address: "cave, 765",
+  address: "Russia",
   price: "500",
   user: User.all.sample
 )
@@ -67,7 +67,7 @@ creature = Creature.new(
   name: "Wolfy",
   kind: "werewolf",
   description: "Only availaible on full moon nights",
-  address: "Somewhere, 234 - place",
+  address: "Netherlands",
   price: "100",
   user: User.all.sample
 )
@@ -81,7 +81,7 @@ creature = Creature.new(
     name: "CutyX",
     kind: "unicorn",
     description: "You love rainbows ?",
-    address:"in the sky, 445 - cloud",
+    address:"Bulgaria",
     price:"4500",
     user: User.all.sample
   )
@@ -95,7 +95,7 @@ creature = Creature.new(
     name: "Hill Giant",
     kind: "giant",
     description: "Big ol giant",
-    address:"Sonderbuur 121, 1068 AK Amsterdam",
+    address:"Indonesia",
     price:"450",
     user: User.all.sample
   )
@@ -109,7 +109,7 @@ creature = Creature.new(
     name: "Githyanki",
     kind: "reavers",
     description: "Arguably the most skilled navigators of the Astral Plane, the gaunt, yellow-skinned githyanki are the reavers of a thousand worlds.",
-    address:"Tehran Province, Tehran, District 6, 25th St, Iran",
+    address:"Charleroi",
     price:"200",
     user: User.all.sample
   )
@@ -123,7 +123,7 @@ creature = Creature.new(
     name: "KUO-TOA",
     kind: "murloc",
     description: "Kuo-toa are sadistic, degenerate fish-like humanoids that once inhabited the shores and islands of the surface world.",
-    address:"29884-29556 Pike Rd 293, Clarksville, MO 63336, États-Unis",
+    address:"Chicago",
     price:"150",
     user: User.all.sample
   )
@@ -137,7 +137,7 @@ creature = Creature.new(
     name: "Yuan-ti",
     kind: "snake",
     description: "Devious serpent folk devoid of compassion, yuan-ti manipulate other creatures by arousing their doubts, evoking their fears, and elevating and crushing their hopes..",
-    address:"19910 Fay Cove, Ash Shamal",
+    address:"Germany",
     price:"300",
     user: User.all.sample
   )
@@ -151,7 +151,7 @@ creature = Creature.new(
     name: "Umber Hulk",
     kind: "croach",
     description: "An abominable horror from deep beneath the earth, an umber hulk burrows into cave complexes, dungeons, or Underdark settlements in search of food—especially the humanoid prey it craves.",
-    address:"560 Orrin Gardens, Kalimantan central",
+    address:"Brussels",
     price:"1000",
     user: User.all.sample
   )
@@ -165,7 +165,7 @@ creature = Creature.new(
     name: "Lich",
     kind: "Wizard",
     description: "A lich is spawned when a great wizard embraces the evil state of undeath as a means of extending life beyond its mortal limits. Scheming and insane, they hunger for long-forgotten knowledge and the most terrible secrets.",
-    address:"7663 Smith Street, Al Boutnan",
+    address:"Oslo",
     price:"3000",
     user: User.all.sample
   )
@@ -179,7 +179,7 @@ creature = Creature.new(
     name: "Displacer Beast",
     kind: "beast",
     description: "This monstrous predator takes its name from its ability to mask itself with illusion, displacing light so that it appears to be somewhere it is not.",
-    address:"800 Beer Walks, Oblast de Tcherkassy",
+    address:"Kiev",
     price:"900",
     user: User.all.sample
   )
@@ -193,7 +193,7 @@ creature = Creature.new(
     name: "Owlbear",
     kind: "owl",
     description: "The owlbear’s reputation for ferocity, aggression, stubbornness, and sheer ill temper makes it one of the most feared predators of the wild.",
-    address:"16957 Pfannerstill Lock, Fakaofo",
+    address:"Sofia",
     price:"300",
     user: User.all.sample
   )
@@ -207,7 +207,7 @@ creature = Creature.new(
     name: "Beholder",
     kind: "monster",
     description: "One glance at a beholder is enough to assess its foul and otherworldly nature. Aggressive, hateful, and greedy, these aberrations dismiss all other creatures as lesser beings, toying with them or destroying them as they choose....",
-    address:"75009 Trevion Fall, Pool",
+    address:"Roma",
     price:"2200",
     user: User.all.sample
   )
@@ -221,7 +221,7 @@ creature = Creature.new(
     name: "Slaad",
     kind: "monster",
     description: "The only creatures native to the inhospitable realm of Limbo are the batrachian slaadi, which thrive in the chaotic torrent of its elements.",
-    address:"958 Bayer Isle, 97180, Guadeloupe, Pointe-à-Pitre, Sainte-Anne",
+    address:"Nice",
     price:"1100",
     user: User.all.sample
   )
@@ -235,7 +235,7 @@ creature = Creature.new(
     name: "Bulette",
     kind: "shark",
     description: "Bulettes (or land sharks) use their powerful claws to tunnel through the earth when they hunt.",
-    address:"5646 Cathy Fork, Amudat, Morunyang",
+    address:"Instanbul",
     price:"1700",
     user: User.all.sample
   )
@@ -249,7 +249,7 @@ creature = Creature.new(
     name: "Mind Flayer",
     kind: "wizard",
     description: "Psionic tyrants, slavers, and interdimensional voyagers, mind flayers are insidious masterminds that harvest entire races for their own twisted ends.",
-    address:"24144 Gisselle Neck, Fakaofo",
+    address:"Ljubljana",
     price:"400",
     user: User.all.sample
   )
@@ -263,7 +263,7 @@ creature = Creature.new(
     name: "Rust Monster",
     kind: "monster",
     description: "These strange, normally docile creatures corrode ferrous metals, then gobble up the rust they create.",
-    address:"877 Hipolito Turnpike, Kabalebo",
+    address:"Split",
     price:"175",
     user: User.all.sample
   )
@@ -277,7 +277,7 @@ creature = Creature.new(
     name: "Gelatinous Cube",
     kind: "cube",
     description: "These creatures scour dungeon passages in silent, predictable patterns, leaving perfectly clean paths in their wake. They consume living tissue while leaving bones and other materials undissolved.",
-    address:"82154 Brekke Land, 445, Streymoy region, Tjørnuvík",
+    address:"Toronto",
     price:"245",
     user: User.all.sample
   )
@@ -286,12 +286,12 @@ creature = Creature.new(
   creature.save!
   creature_array << creature
 
-  file = URI.open('https://www.aidedd.org/dnd/images/cloud-giant-smiling-one.jpg')
+  file = URI.open('https://i.pinimg.com/236x/61/1d/00/611d003c052551bf639504a8e4c0b680--thunder.jpg')
   creature = Creature.new(
     name: "Cloud Giant",
     kind: "giant",
     description: "A cloud giant earns its place in the ordning by the treasure it accumulates, the wealth it wears, and the gifts it bestows on other cloud giants.",
-    address:"122, La Provençale, Nice",
+    address:"Paris",
     price:"1200",
     user: User.all.sample
   )
@@ -305,7 +305,7 @@ creature = Creature.new(
     name: "Kobold",
     kind: "lizard",
     description: "Kobolds are craven reptilian humanoids that worship evil dragons as demigods and serve them as minions and toadies.",
-    address:"353 Medhurst Mount, Comitat de Požega-Slavonie, Općina Čaglin, Stara Ljeskovica",
+    address:"Namur",
     price:"1050",
     user: User.all.sample
   )
@@ -319,7 +319,7 @@ creature = Creature.new(
     name: "Fire Giant",
     kind: "giant",
     description: "Fire giants have a fearsome reputation as soldiers and conquerors, and for their ability to burn, plunder, and destroy.",
-    address:"6131 Brandyn Ways, Melekeok, Ngerulmud",
+    address:"Antwerp",
     price:"2100",
     user: User.all.sample
   )

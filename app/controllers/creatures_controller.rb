@@ -4,8 +4,17 @@ class CreaturesController < ApplicationController
 
   def index
     @creatures = Creature.all
-  end
 
+    @markers = @creatures.geocoded.map do |creature|
+      {
+        lat: creature.latitude,
+        lng: creature.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { creature: creature }),
+        image_url: helpers.asset_url('Map-Marker-Free-Download-PNG.png')
+      }
+    end
+  end
+  #'../assets/images/marker.png'
   def show
     @creature = Creature.find(params[:id])
     @reservation = Reservation.new

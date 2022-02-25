@@ -1,0 +1,9 @@
+<div class="map-window">
+  <div class="banner-window">
+    <%= cl_image_tag creature.photo.key %>
+    <div class="popup-text">
+      <h1><%= link_to creature.name, creature_path(creature) %></h1>
+      <p><strong><%= creature.price %></strong>$</p>
+    </div>
+  </div>
+</div>
